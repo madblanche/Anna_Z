@@ -1,0 +1,103 @@
+body {
+    margin: 0;
+    padding: 0
+}
+
+.block1 {
+    font-family: Tahoma;
+    font-size: 14px;
+    color: #CCCCCC;
+    line-height: 1.5em;
+}
+
+.blocks_line2{
+    float: left;
+    width: 50%;
+    height: 100px;
+    background-color: #FFE4C4;
+}
+
+#block3 {
+    float: right;
+    background-color: #7FFFD4;
+}
+
+.blocks_line3 {
+    float: left;
+    width: 33.3%;
+    height: 100px;
+    background-color: #FFB6C1;
+}
+
+#block5 {
+    background-color: #90EE90;
+}
+
+#block6 {
+    background-color: #FFA07A;
+}
+
+.blocks_line4 {
+    display: block;
+    height: 300px;
+    width: 500px;
+    background-image: url("https://wp-lessons.com/wp-content/uploads/2014/07/123-660x330.jpg.pagespeed.ce.8PVP2fTKEi.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#menu {
+        padding: 0;
+        margin: 0;
+        font-family:  Verdana;
+        }
+#menu li {
+        list-style: none;
+        float: left;
+        height: 30px;
+        padding: 0;
+        margin: 0;
+        width: 150px;
+        text-align: center;
+        background:  #95DF8E;
+        position: relative;
+        padding-top: 12px;
+        }
+#menu li ul{
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        width: 150px;
+        display: none;
+        position: absolute;
+        left: 0;
+        top: 42px;
+        }
+#menu li ul li{
+        float: none;
+        height: 30px;
+        margin: 0;
+        width: 150px;
+        text-align: center;
+        background: #95DF8E;
+        }
+#menu li a{
+        display: block;
+        width: 150px;
+        height: 30px;
+        color:    #006A35;
+        text-decoration: none;
+        }
+
+  #menu li:hover ul{
+          display: block;
+          }
+  #menu li:hover{
+          background: #35C835;
+          }
+  #menu li ul li ul{
+    left:150px;
+    top: 0;
+  }
+  #menu li ul li ul li{display: none;}
+  #menu li ul li:hover ul li{display: block;}
