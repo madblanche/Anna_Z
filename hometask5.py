@@ -79,10 +79,10 @@ print(g(6, 7))
 
 #ООП
 # Создать и проинициализировать класс
-class A:
+class Aclass:
     pass
 
-A()
+Aclass()
 
 # Создать класс, который принимает некоторое кол-во аргументов и устанавливает их, как новые его свойства
 class Student :
@@ -90,24 +90,69 @@ class Student :
         self.name=n
         self.year=y
         print(self.name, "is on the", self.year, "-th year")
-s1=Student()
-s2=Student()
+s1 = Student()
+s2 = Student()
 s1.f("Vasya", 5)
 s2.f("Petya", 6)
 
 
 # Создать класс который содержит в себе public, protected и private свойства.
 # Написать вызов этих свойств, если свойство вызвать нельзя, то кратко написать почему
+class Bclass:
+    def __init__(self, name, surname, age):
+        self.name = name  # public
+        self._surname = surname  # protected
+        self.__age = age  # private
+
+b = Bclass('Ketty', 'Maroon', 33)
+print(b.name)
+print(b._surname)
+#print(b.__age) If you try to call a private method,
+# Python will raise a slightly misleading exception, saying that the method does not exist.
+# Of course it does exist, but it's private, so it's not accessible outside the class.
 
 
 # Создать 3 класса, где потом прописать цепочку наследования классов.
 # Например A -> B -> C. Класс A является родителем для B, где B для С
-g
-# Создать класс A в котором определить конструктор, который должен принимать некое кол-во аргументов.
-# Создать класс B, который наследуется от класса A. В классе
-# B переопределить конструктор из родительского класса, где написать вызов родительского
-# конструктора с модификацией аргументов (например получаем аргумент а, где в родительский конструктор передаем a + 1)
+class A:
+    def __init__(self, name):
+        self.name = name
 
+
+class B(A):
+    def __init__(self, name):
+        super(B, self).__init__(name)
+
+        self.name = '123' + name
+
+
+class C(B):
+    def __init__(self, name):
+        super(C, self).__init__(name)
+# Создать класс A в котором определить конструктор, который должен принимать некое кол-во аргументов.
+# Создать класс B, который наследуется от класса A.
+# В классе B переопределить конструктор из родительского класса,
+# где написать вызов родительского конструктора с модификацией аргументов
+# (например получаем аргумент а, где в родительский конструктор передаем a + 1)
+class A1:
+    def __init__(self, hours=2, seconds=10):
+        self.hours = hours
+        self.seconds = seconds
+
+class B1(A1):
+    def __init__(self, hours, seconds):
+        super(B1, self).__init__(hours + 1, seconds + 20)
 
 # Разработать класс с поддержкой оператора with.
+class Last(object):
+    def __enter__(self):
+        print('sss')
+        return 'sss111'
+    def __exit__(self ,type, value, traceback):
+        print('ok')
+        return False
 
+with Last() as s:
+    print(s)
+
+print(s)
